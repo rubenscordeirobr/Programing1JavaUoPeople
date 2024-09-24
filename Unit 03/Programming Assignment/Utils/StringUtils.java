@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 /**
  * The StringUtils class provides utility methods for string manipulation, including padding and repeating strings.

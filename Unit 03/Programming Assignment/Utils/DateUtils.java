@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -7,14 +7,16 @@ import java.time.format.DateTimeFormatterBuilder;
 
 /**
  * The DateUtils class provides utility methods for working with dates,
- * including parsing, formatting, and calculating age based on a given birth date.
+ * including parsing, formatting, and calculating age based on a given birth
+ * date.
  */
 public class DateUtils {
 
     private static DateTimeFormatter dateFormatter;
 
     /**
-     * Returns a shared DateTimeFormatter instance used for date parsing and formatting.
+     * Returns a shared DateTimeFormatter instance used for date parsing and
+     * formatting.
      * This formatter supports both "MM/dd/yyyy" and "M/d/yyyy" formats.
      *
      * @return the DateTimeFormatter instance.
@@ -53,18 +55,23 @@ public class DateUtils {
     }
 
     /**
-     * Attempts to parse a date string. If parsing fails, the provided default date is returned.
-     * This method is useful when working with user input where date formats may vary.
+     * Attempts to parse a date string. If parsing fails, the provided default date
+     * is returned.
+     * This method is useful when working with user input where date formats may
+     * vary.
      *
      * @param date        the date string to parse.
      * @param defaultDate the default LocalDate to return if parsing fails.
      * @return the parsed LocalDate object or the defaultDate if parsing fails.
      */
-    public static LocalDate tryDateParser(String date, LocalDate defaultDate) {
+    public static LocalDate tryDateParser(String date, LocalDate defaultDate, boolean isPrintFailMessage) {
         try {
             return dateParser(date);
         } catch (Exception e) {
-            PrintUtils.printFail("Invalid date format " + date + ", using default date");
+
+            if (isPrintFailMessage) {
+                PrintUtils.printFail("Invalid date format " + date + ", using default date");
+            }
             return defaultDate;
         }
     }

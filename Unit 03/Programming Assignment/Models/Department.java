@@ -1,7 +1,8 @@
-package Models;
+package models;
 
 import java.util.ArrayList;
-import Utils.StringUtils;
+
+import utils.StringUtils;
 
 /**
  * The Department class represents a department within an educational institution.
@@ -94,6 +95,7 @@ public class Department extends Model {
 
         // Include Courses
         if (this.courses.size() > 0) {
+            
             sb.append("\n\n");
             sb.append(StringUtils.padRight("", 10)).append("Courses: \n");
             sb.append(StringUtils.padRight("", 10)).append(Course.getViewHeader()).append("\n");
@@ -109,6 +111,7 @@ public class Department extends Model {
 
         // Include Professors
         if (this.professors.size() > 0) {
+
             sb.append("\n\n");
             sb.append(StringUtils.padRight("", 10)).append("Professors: \n");
             sb.append(StringUtils.padRight("", 10)).append(Professor.getViewHeader()).append("\n");

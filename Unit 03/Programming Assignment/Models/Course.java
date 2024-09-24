@@ -1,6 +1,6 @@
-package Models;
+package models;
 
-import Utils.StringUtils;
+import utils.StringUtils;
 
 /**
  * The Course class represents a course within a department.

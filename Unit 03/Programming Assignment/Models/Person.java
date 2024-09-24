@@ -1,7 +1,8 @@
-package Models;
+package models;
 
 import java.time.LocalDate;
-import Utils.DateUtils;
+
+import utils.DateUtils;
 
 /**
  * The Person class is an abstract representation of a person entity.
@@ -23,7 +24,7 @@ abstract class Person extends Model {
      */
     protected Person(String name, String birthDate) {
         this.name = name;
-        this.birthDate = DateUtils.tryDateParser(birthDate, LocalDate.now());
+        this.birthDate = DateUtils.tryDateParser(birthDate, LocalDate.now(), false);
     }
 
     /**

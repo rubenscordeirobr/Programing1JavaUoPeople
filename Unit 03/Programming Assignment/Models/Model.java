@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 /**
  * The abstract class Model serves as a blueprint for creating different model types.

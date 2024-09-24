@@ -1,7 +1,8 @@
-package Models;
+package models;
 
 import java.util.ArrayList;
-import Utils.StringUtils;
+
+import utils.StringUtils;
 
 /**
  * The Professor class represents a professor entity, which extends the Person class.

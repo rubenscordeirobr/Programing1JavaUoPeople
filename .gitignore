@@ -1,0 +1,13 @@
+TheCourse/
+*.class
+*.pdf
+.vs
+*.png
+*.txt
+*.docx
+*.jar
+.vscode/
+lib/
+bin/
+Unit 05/Programming Assignment/CourseEnrollmentSystem.java
+Unit 06/forum/test.java

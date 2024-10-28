@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<!-- 
+    FXML layout for the Course form 
+    This layout allows the user to input course details such as ID, name, capacity,
+    and department, with Save/Cancel buttons.
+-->
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="studmgmtsys.CourseFormController"
+          hgap="10" vgap="10" prefWidth="400">
+
+    <!-- Define padding around the GridPane -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Label for Course ID field -->
+    <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+    <!-- TextField for Course ID input -->
+    <TextField fx:id="idField" promptText="Enter Course ID" GridPane.columnIndex="1"
+               GridPane.rowIndex="0" />
+
+    <!-- Label for Course Name field -->
+    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <!-- TextField for Course Name input -->
+    <TextField fx:id="nameField" promptText="Enter course name" GridPane.columnIndex="1"
+               GridPane.rowIndex="1" />
+
+    <!-- Label for Course Capacity field -->
+    <Label text="Capacity:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <!-- TextField for Course Capacity input -->
+    <TextField fx:id="capacityField" promptText="Enter course capacity" GridPane.columnIndex="1"
+               GridPane.rowIndex="2" />
+
+    <!-- Label for Department ChoiceBox -->
+    <Label text="Department:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+    <!-- ChoiceBox for selecting Department -->
+    <ChoiceBox fx:id="departmentChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="3">
+    </ChoiceBox>
+        
+    <!-- Save button to submit the form -->
+    <Button text="Save" onAction="#handleSubmit" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+    <!-- Cancel button to close the form without saving -->
+    <Button text="Cancel" onAction="#handleCancel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+</GridPane>

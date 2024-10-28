@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+
+<!-- 
+    FXML layout for the Grade Enrollment form.
+    This layout allows the user to input a grade for a specific student and course.
+-->
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="studmgmtsys.GradeEnrollmentFormController"
+          hgap="10" vgap="10" prefWidth="400">
+
+    <!-- Define padding around the GridPane -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Label for Student field -->
+    <Label text="Student:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <!-- TextField for Student (readonly) -->
+    <TextField fx:id="studentField" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false"/>
+
+    <!-- Label for Course field -->
+    <Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <!-- TextField for Course (readonly) -->
+    <TextField fx:id="courseField" GridPane.columnIndex="1" GridPane.rowIndex="2" editable="false"/>
+
+    <!-- Label for Grade field -->
+    <Label text="Grade:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+    <!-- TextField for entering the Grade -->
+    <TextField fx:id="gradeField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <!-- Submit button for grading -->
+    <Button text="Grade" onAction="#handleSubmit" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+    <!-- Cancel button to close the form without grading -->
+    <Button text="Cancel" onAction="#handleCancel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+</GridPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- 
+    FXML layout for the Enrollment Management screen.
+    This layout is used to manage enrollments, with options to add, edit, and delete.
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="20"
+      fx:controller="studmgmtsys.EnrollmentManagementController"
+      fx:id="enrollmentManagement"
+      prefWidth="800">
+
+    <!-- Define padding around the VBox layout -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Header section -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Header text -->
+        <Text text="Manage Enrollments" style="-fx-font-size: 14px;" />
+        <!-- Button to add a new enrollment -->
+        <Button text="Add New Enrollment" onAction="#handleNewEnrollment">
+            <HBox.margin>
+                <Insets left="51" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+
+    <!-- Body section containing the enrollment table -->
+    <HBox alignment="CENTER" prefHeight="500" spacing="20">
+        <!-- Table displaying enrollments -->
+        <TableView fx:id="enrollmentTable" prefHeight="500" prefWidth="800">
+            <columns>
+                <!-- Table columns for student, course, grade, and actions -->
+                <TableColumn fx:id="studentColumn" text="Student" prefWidth="200" />
+                <TableColumn fx:id="courseColumn" text="Course" prefWidth="200" />
+                <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="100" />
+                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="200" />
+            </columns>
+        </TableView>
+    </HBox>
+
+    <!-- Footer section with a close button -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Button to close the window -->
+        <Button text="Close" onAction="#handleClose" />
+    </HBox>
+
+</VBox>

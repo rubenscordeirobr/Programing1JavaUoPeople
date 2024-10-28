@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- 
+    FXML layout for the Department Management screen.
+    This layout is used to manage departments with options to add, edit, and delete.
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="20"
+      fx:controller="studmgmtsys.DepartmentManagementController"
+      fx:id="departmentManagement"
+      prefWidth="800">
+
+    <!-- Define padding around the VBox layout -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Header section -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Header text -->
+        <Text text="Manage Departments" style="-fx-font-size: 14px;" />
+        <!-- Button to add a new department -->
+        <Button text="New Department" onAction="#handleNewDepartment">
+            <HBox.margin>
+                <Insets left="51" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+
+    <!-- Body section containing the department table -->
+    <HBox alignment="CENTER" prefHeight="500" spacing="20">
+        <!-- Table displaying departments -->
+        <TableView fx:id="departmentTable" prefHeight="500" prefWidth="800">
+            <columns>
+                <!-- Table columns for department ID, name, and actions -->
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="150" />
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="250" />
+                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="200" />
+            </columns>
+        </TableView>
+    </HBox>
+
+    <!-- Footer section with a close button -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Button to close the window -->
+        <Button text="Close" onAction="#handleClose" />
+    </HBox>
+
+</VBox>

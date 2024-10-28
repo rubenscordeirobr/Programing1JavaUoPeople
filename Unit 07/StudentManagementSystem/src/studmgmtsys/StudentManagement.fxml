@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- 
+    FXML layout for the Student Management screen.
+    This layout provides an interface for managing student records.
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="20"
+      fx:controller="studmgmtsys.StudentManagementController"
+      fx:id="studentManagement"
+      prefWidth="800">
+
+    <!-- Define padding around the VBox layout -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Header section -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Header text for the student management interface -->
+        <Text text="Manage Students" style="-fx-font-size: 14px;" />
+        <!-- Button to add a new student -->
+        <Button text="New Student" onAction="#handleNewStudent">
+            <HBox.margin>
+                <Insets left="51" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+
+    <!-- Body section containing the student table -->
+    <HBox alignment="CENTER" prefHeight="500" spacing="20">
+        <!-- Table displaying students -->
+        <TableView fx:id="studentTable" prefHeight="500" prefWidth="800">
+            <columns>
+                <!-- Table columns for student ID, name, and actions -->
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="150" />
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="250" />
+                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="200" />
+            </columns>
+        </TableView>
+    </HBox>
+
+    <!-- Footer section with a close button -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Button to close the student management window -->
+        <Button text="Close" onAction="#handleClose" />
+    </HBox>
+
+</VBox>

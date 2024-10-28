@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- 
+    Main layout for the Course Management screen 
+    This file defines a VBox as the root layout with a controller that manages course-related actions.
+-->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="20"
+      fx:controller="studmgmtsys.CourseManagementController"
+      fx:id="courseManagement"
+      prefWidth="800">
+
+    <!-- Define padding around the VBox layout -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Header section -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <!-- Header text -->
+        <Text text="Manage Courses" style="-fx-font-size: 14px;" />
+        <!-- Button for creating a new course -->
+        <Button text="New Course" onAction="#handleNewCourse">
+            <HBox.margin>
+                <Insets left="51" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+
+    <!-- Body section containing the course table -->
+    <HBox alignment="CENTER" prefHeight="500" spacing="20">
+        <!-- Table displaying courses -->
+        <TableView fx:id="courseTable" prefHeight="500" prefWidth="800">
+            <columns>
+                <!-- Table columns for course ID, name, department, and actions -->
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="100" />
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="200" />
+                <TableColumn fx:id="departmentColumn" text="Department" prefWidth="200" />
+                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="200" />
+            </columns>
+        </TableView>
+    </HBox>
+
+    <!-- Footer section with a close button -->
+    <HBox alignment="CENTER" prefHeight="30">
+        <Button text="Close" onAction="#handleClose" />
+    </HBox>
+
+</VBox>

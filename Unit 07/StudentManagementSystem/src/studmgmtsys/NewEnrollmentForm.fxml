@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<!-- 
+    FXML layout for the New Enrollment form.
+    This layout allows the user to select a student and a course for enrollment.
+-->
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="studmgmtsys.NewEnrollmentFormController"
+          hgap="10" vgap="10" prefWidth="400">
+
+    <!-- Define padding around the GridPane -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <!-- Label for Student selection -->
+    <Label text="Student:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <!-- Drop-down list for selecting a Student -->
+    <ChoiceBox fx:id="studentChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    </ChoiceBox>
+
+    <!-- Label for Course selection -->
+    <Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+    <!-- Drop-down list for selecting a Course -->
+    <ChoiceBox fx:id="courseChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="2">
+    </ChoiceBox>
+ 
+    <!-- Submit button for enrollment -->
+    <Button text="Enroll" onAction="#handleSubmit" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+
+    <!-- Cancel button to close the form without enrolling -->
+    <Button text="Cancel" onAction="#handleCancel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+</GridPane>
